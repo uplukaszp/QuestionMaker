@@ -8,10 +8,10 @@
 
 <ul>
 <?php
-$dba_name = "heroku_94287781fba39f4";
-$mysql_username = "b4d6043aa104f8";
-$mysql_password = "69463135";
-$server_name = "eu-cdbr-west-01.cleardb.com";
+$dba_name = getenv("db_name");
+$mysql_username = getenv("login");
+$mysql_password = getenv("pass");
+$server_name = getenv("serv_name");
 $conn = mysqli_connect($server_name, $mysql_username, $mysql_password, $dba_name); 
 $mysql_qry = "select * from category"; 
 $result = mysqli_query( $conn,$mysql_qry);

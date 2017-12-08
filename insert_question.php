@@ -1,4 +1,5 @@
 <?php
+require "index.php";
 	if(isset($_POST['id_kat']))
 		$id_kat=$_POST['id_kat'];
 	else
@@ -36,11 +37,7 @@
 		else
 		header("Location: question.php?err=no_pyt&id=".$id_kat);
 	
-	$dba_name = "heroku_94287781fba39f4";
-	$mysql_username = "b4d6043aa104f8";
-	$mysql_password = "69463135";
-	$server_name = "eu-cdbr-west-01.cleardb.com";
-	$conn = mysqli_connect($server_name, $mysql_username, $mysql_password, $dba_name); 
+	
 	$mysql_qry = "insert into question values('','$id_kat','$pyt','$pkt')";
 	$result = mysqli_query( $conn,$mysql_qry);
 	$id_quest=mysqli_insert_id($conn);
